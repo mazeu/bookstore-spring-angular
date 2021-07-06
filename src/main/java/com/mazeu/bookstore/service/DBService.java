@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 
 @Service
-public class DBservice {
+public class DBService {
 
     @Autowired
     private CategoriaRepository categoriaRepository;
