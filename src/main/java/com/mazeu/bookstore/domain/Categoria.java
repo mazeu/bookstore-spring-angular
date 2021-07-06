@@ -57,6 +57,6 @@ public class Categoria implements Serializable {
     }
 
     public <E> List getLivros() {
-        return null;
+        return books;
     }
 }
