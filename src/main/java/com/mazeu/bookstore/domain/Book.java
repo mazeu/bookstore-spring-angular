@@ -1,17 +1,15 @@
 package com.mazeu.bookstore.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-public class Livro implements Serializable {
+public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String titulo;
@@ -21,10 +19,15 @@ public class Livro implements Serializable {
     private String texto;
 
     @ManyToOne
-    @Column(name = "categoria_id")
+    @JoinColumn(name = "category_id")
     private Categoria categoria;
 
-    public Livro(Integer id, String titulo, String nameAutor, String texto, Categoria categoria) {
+    public Book(){
+        super();
+    }
+
+    public Book(Integer id, String titulo, String nameAutor, String texto, Categoria categoria) {
+        super();
         this.id = id;
         this.titulo = titulo;
         this.nameAutor = nameAutor;

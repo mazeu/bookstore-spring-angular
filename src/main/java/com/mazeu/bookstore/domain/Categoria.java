@@ -1,8 +1,5 @@
 package com.mazeu.bookstore.domain;
 
-import org.hibernate.annotations.GeneratorType;
-import org.yaml.snakeyaml.events.Event;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,7 +19,7 @@ public class Categoria implements Serializable {
     private String descricao;
 
     @OneToMany(mappedBy = "categoria")
-    private List<Livro> livros = new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
 
 
     public Categoria(){
@@ -57,5 +54,9 @@ public class Categoria implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public <E> List getLivros() {
+        return null;
     }
 }
